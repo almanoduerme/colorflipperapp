@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 // Button Component
 import Button from "./components/Button/Button";
@@ -38,11 +38,17 @@ const App = () => {
     <div className="App" style={{ backgroundColor: color }}>
       <h1 className="title">Color Flipper App</h1>
       <div className="container">
-        <Button text="Click me!" handleClick={handleClick} className="button" disabled={copied} />
+        <Button
+          text="Click me!"
+          handleClick={handleClick}
+          className="button"
+          disabled={copied}
+        />
         <CopyToClipboard text={color} className="CopyToClipboard">
           <MdContentCopy size={30} color="white" onClick={handleCopy} />
         </CopyToClipboard>
       </div>
+
       <div className="copy-container">
         {copied && <span className="copied">¡Copiado! {color}</span>}
       </div>
